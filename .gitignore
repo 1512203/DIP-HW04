@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+
+# Build folder
+build/*
+
+# Resources folder
+resources/*
+
+# Vim swap file
+.swp
+.swo
+.swn
