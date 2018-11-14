@@ -38,6 +38,6 @@ build/*
 resources/*
 
 # Vim swap file
-.swp
-.swo
-.swn
+*.swp
+*.swo
+*.swn
