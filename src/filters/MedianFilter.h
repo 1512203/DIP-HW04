@@ -8,7 +8,9 @@ class MedianFilter: public BaseFilter {
 private:
 protected:
 public:
-    Mat applyOnImage(int n, Mat* img);
+    MedianFilter(int _n): BaseFilter(_n) {}
+    Mat applyOnImage(Mat* img);
+    ~MedianFilter() {}
 };
 
 #endif

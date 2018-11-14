@@ -13,9 +13,3 @@ void BaseProcessor::execute(argv_t kwargs) {
     waitKey(0);
 }
 
-
-BaseProcessor::~BaseProcessor() {
-    
-}
-
-

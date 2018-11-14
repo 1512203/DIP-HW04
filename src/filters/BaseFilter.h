@@ -6,8 +6,11 @@
 class BaseFilter {
 private:
 protected:
+    int n;                  // Kernel size
 public:
-    virtual Mat applyOnImage(int n, Mat* img) = 0;
+    BaseFilter(int _n): n(_n) {}
+    virtual Mat applyOnImage(Mat* img) = 0;
+    virtual ~BaseFilter() {}
 };
 
 #endif

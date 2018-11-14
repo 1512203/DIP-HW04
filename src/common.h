@@ -84,6 +84,10 @@ typedef map<string, void*> argv_json;
 #define COMMAND_GAUSSIAN_FILTER_GRAYSCALE           "--gg"
 #define COMMAND_GAUSSIAN_FILTER_RGB                 "--gc"
 
+#define MEAN_FILTER_LABEL                           "mean"
+#define MEDIAN_FILTER_LABEL                         "median"
+#define GAUSSIAN_FILTER_LABEL                       "gaussian"
+
 
 const double EPSILON = 1E-9;
 

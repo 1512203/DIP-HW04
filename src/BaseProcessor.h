@@ -11,7 +11,7 @@ protected:
 public:
     BaseProcessor(string pathToImage);
     void execute(argv_t kwargs);
-    virtual ~BaseProcessor();
+    virtual ~BaseProcessor() {};
 };
 
 #endif
