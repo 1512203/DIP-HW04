@@ -32,3 +32,20 @@ bool isLessDouble(double a, double b) {
     return a + EPSILON < b;
 }
 
+
+Mat convolution(Mat* img, double** filter, int kernelSize) {
+    assert(kernelSize % 2 == 1);
+
+    Mat result = Mat::zeros(img->size(), img->type());
+    int k = kernelSize >> 1;
+
+    for (int y = 0; y < img->rows; ++y) 
+        for (int x = 0; x < img->cols; ++x) 
+            for (int j = -k; j <= k; ++j) 
+                for (int i = -k; i <= k; ++i) 
+                    if (y-j >= 0 && y-j < img->rows && x-i >= 0 && x-i < img->cols) 
+                        for (int c = 0; c < 3; ++c) 
+                            result.at<Vec3b>(y, x)[c] += img->at<Vec3b>(y-j, x-i)[c] * filter[j+k][i+k];
+    return result;
+}
+

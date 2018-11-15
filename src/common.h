@@ -99,6 +99,7 @@ void displayImage(string windowName, Mat img);
 bool isGrayscale(Mat img);
 bool isEqualDouble(double a, double b);
 bool isLessDouble(double a, double b);
+Mat convolution(Mat* img, double** filter, int kernelSize);
 
 #endif
 
