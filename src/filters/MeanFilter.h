@@ -8,7 +8,7 @@ class MeanFilter: public BaseFilter {
 private:
 protected:
 public:
-    MeanFilter(int _n): BaseFilter(_n) {}
+    MeanFilter(int _n, int _m): BaseFilter(_n, _m) {}
     Mat applyOnImage(Mat* img);
     ~MeanFilter() {}
 };

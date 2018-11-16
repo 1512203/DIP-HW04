@@ -15,28 +15,52 @@ int main(int argc, char* argv[]) {
     argv_t kwargs;
 
     if (strcmp(command, COMMAND_MEAN_FILTER_GRAYSCALE) == 0) {
+        kwargs["grayscale"] = REQUIRE_GRAYSCALE;
         kwargs["filter"] = MEAN_FILTER_LABEL;
-        kwargs["kernel_size"] = argv[3];
+        kwargs["height"] = argv[3];
+        if (argc >= 5) {
+            kwargs["width"] = argv[4];
+        }
     }
     else if (strcmp(command, COMMAND_MEAN_FILTER_RGB) == 0) {
+        kwargs["grayscale"] = NOT_REQUIRE_GRAYSCALE;
         kwargs["filter"] = MEAN_FILTER_LABEL;
-        kwargs["kernel_size"] = argv[3];
+        kwargs["height"] = argv[3];
+        if (argc >= 5) {
+            kwargs["width"] = argv[4];
+        }
     }
     else if (strcmp(command, COMMAND_MEDIAN_FILTER_GRAYSCALE) == 0) {
+        kwargs["grayscale"] = REQUIRE_GRAYSCALE;
         kwargs["filter"] = MEDIAN_FILTER_LABEL;
-        kwargs["kernel_size"] = argv[3];
+        kwargs["height"] = argv[3];
+        if (argc >= 5) {
+            kwargs["width"] = argv[4];
+        }
     }
     else if (strcmp(command, COMMAND_MEDIAN_FILTER_RGB) == 0) {
+        kwargs["grayscale"] = NOT_REQUIRE_GRAYSCALE;
         kwargs["filter"] = MEDIAN_FILTER_LABEL;
-        kwargs["kernel_size"] = argv[3];
+        kwargs["height"] = argv[3];
+        if (argc >= 5) {
+            kwargs["width"] = argv[4];
+        }
     }
     else if (strcmp(command, COMMAND_GAUSSIAN_FILTER_GRAYSCALE) == 0) {
+        kwargs["grayscale"] = REQUIRE_GRAYSCALE;
         kwargs["filter"] = GAUSSIAN_FILTER_LABEL;
-        kwargs["kernel_size"] = argv[3];
+        kwargs["height"] = argv[3];
+        if (argc >= 5) {
+            kwargs["width"] = argv[4];
+        }
     }
     else if (strcmp(command, COMMAND_GAUSSIAN_FILTER_RGB) == 0) {
+        kwargs["grayscale"] = NOT_REQUIRE_GRAYSCALE;
         kwargs["filter"] = GAUSSIAN_FILTER_LABEL;
-        kwargs["kernel_size"] = argv[3];
+        kwargs["height"] = argv[3];
+        if (argc >= 5) {
+            kwargs["width"] = argv[4];
+        }
     }
     else {
         cerr << ERROR_MESS_INVALID_COMMANDS << endl;

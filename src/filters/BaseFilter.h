@@ -6,9 +6,9 @@
 class BaseFilter {
 private:
 protected:
-    int n;                  // Kernel size
+    int n, m;                  // Kernel size (n: y axis, m: x axis)
 public:
-    BaseFilter(int _n): n(_n) { assert(this->n % 2 == 1); }
+    BaseFilter(int _n, int _m): n(_n), m(_m) { assert(this->n % 2 == 1 && this->m % 2 == 1); }
     virtual Mat applyOnImage(Mat* img) = 0;
     virtual ~BaseFilter() {}
 };

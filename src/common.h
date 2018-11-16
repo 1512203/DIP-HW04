@@ -13,6 +13,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+#include <vector>
 
 // OpenCV Libraries
 #include <opencv2/opencv.hpp>
@@ -32,12 +33,13 @@ using std::endl;
 // Std data structures
 using std::map;
 using std::string;
+using std::vector;
 
 // Std utility functions
 using std::max;
 using std::min;
 using std::stof;
-
+using std::sort;
 
 
 /* Include elements in namespace cv */
@@ -73,6 +75,7 @@ typedef map<string, void*> argv_json;
 
 #define ERROR_MESS_INVALID_ARGUMENTS                "Invalid arguments!"
 #define ERROR_MESS_INVALID_COMMANDS                 "Invalid command!"
+#define ERROR_MESS_INVALID_GRAYSCALE_IMAGE          "Invalid grayscale image!"
 
 
 /* Define commands */
@@ -88,8 +91,12 @@ typedef map<string, void*> argv_json;
 #define MEDIAN_FILTER_LABEL                         "median"
 #define GAUSSIAN_FILTER_LABEL                       "gaussian"
 
+#define REQUIRE_GRAYSCALE                           "1"
+#define NOT_REQUIRE_GRAYSCALE                       "0"
+
 
 const double EPSILON = 1E-9;
+const double PI = acos(-1.0);
 
 
 /* Some utility function */
@@ -99,7 +106,7 @@ void displayImage(string windowName, Mat img);
 bool isGrayscale(Mat img);
 bool isEqualDouble(double a, double b);
 bool isLessDouble(double a, double b);
-Mat convolution(Mat* img, double** filter, int kernelSize);
+Mat convolution(Mat* img, double** filter, int n, int m);
 
 #endif
 

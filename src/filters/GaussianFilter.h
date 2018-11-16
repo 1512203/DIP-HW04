@@ -8,7 +8,7 @@ class GaussianFilter: public BaseFilter {
 private:
 protected:
 public:
-    GaussianFilter(int _n): BaseFilter(_n) {}
+    GaussianFilter(int _n, int _m): BaseFilter(_n, _m) {}
     Mat applyOnImage(Mat* img);
     ~GaussianFilter() {}
 };

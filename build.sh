@@ -1,5 +1,6 @@
 if [ -d build ]; then
-    echo "./build folder already exists!"
+    rm -rf build
+    mkdir build
 else
     mkdir build
 fi
