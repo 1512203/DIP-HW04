@@ -15,6 +15,7 @@ set( CMAKE_CXX_EXTENSIONS OFF )
 # Project sources
 set ( SOURCE_DIR src )
 set ( SOURCE_FILTERS_DIR src/filters )
+set ( SOURCE_HELPERS_DIR src/helpers )
 set ( PROJECT_SOURCES 
     ${SOURCE_DIR}/common.h 
     ${SOURCE_DIR}/common.cpp 
@@ -30,6 +31,10 @@ set ( PROJECT_SOURCES
     ${SOURCE_FILTERS_DIR}/MeanFilter.cpp
     ${SOURCE_FILTERS_DIR}/MedianFilter.h
     ${SOURCE_FILTERS_DIR}/MedianFilter.cpp
+    ${SOURCE_HELPERS_DIR}/MedianFinder.h
+    ${SOURCE_HELPERS_DIR}/MedianFinder.cpp
+    ${SOURCE_HELPERS_DIR}/ds/Heap.h
+    ${SOURCE_HELPERS_DIR}/ds/Heap.cpp
 )
 
 # The main program

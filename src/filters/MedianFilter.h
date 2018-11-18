@@ -3,6 +3,7 @@
 
 #include "../common.h"
 #include "BaseFilter.h"
+#include "../helpers/MedianFinder.h"
 
 class MedianFilter: public BaseFilter {
 private:
